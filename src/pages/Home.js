@@ -22,6 +22,7 @@ const Home = () => {
             <div className='d-flex justify-content-center ' data-testid="home">
                 <MDBSpinner color='success'>
                     <span className='visually-hidden'>Loading...</span>
+                    <p style={{visibility:"hidden"}}>spinner</p>
                 </MDBSpinner>
             </div>
         )

@@ -35,15 +35,29 @@ test("It should check input area", () => {
 
 
 
+test("Should Render Home Page Spinner", () => {
+  const { getByTestId } = render(
+   <Provider store={store}>
+         <Home  />
+   </Provider>
+  )
+  const { getByText } = within(getByTestId('home'))
+  expect(getByText('spinner')).toBeInTheDocument()
+   setTimeout(()=>{
+    expect(getByText('Welcome')).toBeInTheDocument()
+   }, 1000)
+});
+
 test("Should Render Home Page", () => {
   const { getByTestId } = render(
    <Provider store={store}>
-      <Home  />
-      </Provider>
+         <Home  />
+   </Provider>
   )
   const { getByText } = within(getByTestId('home'))
-  expect(getByText('Welcome')).toBeInTheDocument()
-
+   setTimeout(()=>{
+    expect(getByText('Welcome')).toBeInTheDocument()
+   }, 1000)
 });
 
 

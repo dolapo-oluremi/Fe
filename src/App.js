@@ -20,7 +20,7 @@ function App() {
 
 <br />
 <br />
-<p>ismail dolapo alli</p>
+<p style={{visibility:"hidden"}}>ismail</p>
 
         
       </div>
