@@ -35,8 +35,7 @@ const PostPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(updatePostStart({ id, postValue }))
-        setTimeout(() => navigate('/'), 500)
-        navigate('/')
+        setTimeout(() => navigate('/'), 1000)
     }
 
     const onInputChange = (e) => {
@@ -48,7 +47,7 @@ const PostPage = () => {
     }
 
     return (<>
-        <MDBCard alignment='center' className='container' onSubmit={handleSubmit}>
+        <MDBCard alignment='center' className='container'>
         <p className="h3">Post</p>
             <MDBCardBody>
                 {edit ? (<>
@@ -67,7 +66,7 @@ const PostPage = () => {
                     </div>
                     <div style={{ marginTop: "50px" }}>
                         <MDBBtn onClick={handleEdit} className='mx-3'>{edit ? "Edit" : "Cancel"}</MDBBtn>
-                        <MDBBtn type='submit' >Save</MDBBtn>
+                        <MDBBtn type='submit' onClick={handleSubmit}>Save</MDBBtn>
                     </div>
                 </>)}
             </MDBCardBody>
