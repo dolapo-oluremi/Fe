@@ -19,7 +19,7 @@ const Home = () => {
 
     if (loading) {
         return (
-            <div className='d-flex justify-content-center '>
+            <div className='d-flex justify-content-center ' data-testid="home">
                 <MDBSpinner color='success'>
                     <span className='visually-hidden'>Loading...</span>
                 </MDBSpinner>
@@ -28,18 +28,18 @@ const Home = () => {
     }
 
     return (
-        <div className='container'>
-
+        <div className='container' data-testid="home" >
+            <p className="h3">Welcome</p>
             <InputComp handleSearch={handleSearch} />
             <br />
-            {posts.filter((item)=>{
-            if(searchTexts ===''){
-                return item
-            }
-          else if(item.title.toLowerCase().includes(searchTexts.toLowerCase())){
-            return item
-          }
-        }).map((item, index) => (
+            {posts.filter((item) => {
+                if (searchTexts === '') {
+                    return item
+                }
+                else if (item.title.toLowerCase().includes(searchTexts.toLowerCase())) {
+                    return item
+                }
+            }).map((item, index) => (
                 <Link to={`/post/${item.id}`} key={index}>
                     <MDBCard className='mb-2'>
                         <MDBCardBody>

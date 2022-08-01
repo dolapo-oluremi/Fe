@@ -7,18 +7,24 @@ import PostPage from './pages/PostPage';
 
 function App() {
   return (
-    <BrowserRouter>
+   <BrowserRouter>
       <div className="App">
-        <Routes>
+      <br/>
+          <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/post/:id' element={<PostPage />} />
           <Route path='/post/:id' element={<PostPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
+
+
+<br />
+<br />
+<p>ismail dolapo alli</p>
+
+        
       </div>
     </BrowserRouter>
-
-
   );
 }
 

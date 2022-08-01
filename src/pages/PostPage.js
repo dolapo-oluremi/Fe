@@ -49,6 +49,7 @@ const PostPage = () => {
 
     return (<>
         <MDBCard alignment='center' className='container' onSubmit={handleSubmit}>
+        <p className="h3">Post</p>
             <MDBCardBody>
                 {edit ? (<>
                     <MDBCardTitle>{title}</MDBCardTitle>
