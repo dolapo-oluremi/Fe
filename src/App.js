@@ -13,7 +13,6 @@ function App() {
           <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/post/:id' element={<PostPage />} />
-          <Route path='/post/:id' element={<PostPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
 

@@ -34,7 +34,7 @@ const PostPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(updatePostStart({ id, postValue }))
+        dispatch(updatePostStart({ postValue }))
         setTimeout(() => navigate('/'), 1000)
     }
 
@@ -61,8 +61,8 @@ const PostPage = () => {
                     <MDBInputGroup className='mb-3' >
                         <textarea name="title" className='form-control' value={title} onChange={onInputChange} />
                     </MDBInputGroup>
-                    <div class="form-outline" style={{ border: "1px solid black" }}>
-                        <textarea name="body" class="form-control" id="textAreaExample1" rows="4" value={body} onChange={onInputChange} />
+                    <div className="form-outline" style={{ border: "1px solid black" }}>
+                        <textarea name="body" className="form-control" id="textAreaExample1" rows="4" value={body} onChange={onInputChange} />
                     </div>
                     <div style={{ marginTop: "50px" }}>
                         <MDBBtn onClick={handleEdit} className='mx-3'>{edit ? "Edit" : "Cancel"}</MDBBtn>

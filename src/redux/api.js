@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const loadPostsApi = async () =>
-    await axios.get("http://localhost:4678");
+    await axios.get("http://localhost:4990");
 
 
 // define put api to update post by id
-    export const updatePostApi = async (postId, postInfo) =>
-    await axios.put(`http://localhost:4678/post/${postId}`, postInfo);
+    export const updatePostApi = async (postInfo) =>
+    await axios.patch(`http://localhost:4990/posts/${postInfo.title}`, postInfo);
 
 
 

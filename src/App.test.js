@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import InputComp from './components/InputComp';
+import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import store from './redux/store';
 
@@ -59,5 +60,16 @@ test("Should Render Home Page", () => {
     expect(getByText('Welcome')).toBeInTheDocument()
    }, 1000)
 });
+
+
+test('renders error page', () => {
+  render(
+      <ErrorPage />
+
+  );
+  const errorMessage = screen.getByText(/OOPS/i);
+  expect(errorMessage).toBeInTheDocument();
+});
+
 
 

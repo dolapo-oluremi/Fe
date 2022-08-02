@@ -33,9 +33,10 @@ catch(error){
 // define the put function action
 
 
-function* onUpdatePostStartAsync({payload:{id, postValue}}){
+function* onUpdatePostStartAsync({payload:{postValue}}){
+    console.log("POSTVALUE", {payload:{postValue}});
    try{
-    const response = yield call(updatePostApi, id, postValue)
+    const response = yield call(updatePostApi, postValue)
     if(response.status === 200){
         yield put(updatePostSuccess())
         console.log("UPDATE",updatePostSuccess());
