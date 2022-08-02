@@ -42,13 +42,11 @@ const PostPage = () => {
         e.preventDefault()
         let { name, value } = e.target;
         setPostValue({ ...postValue, [name]: value })
-
-       console.log(setPostValue({ ...postValue, [name]: value }));
     }
 
     return (<>
         <MDBCard alignment='center' className='container'>
-        <p className="h3">Post</p>
+        <p className="h3">{edit ? "Post" : "Edit Post" }</p>
             <MDBCardBody>
                 {edit ? (<>
                     <MDBCardTitle>{title}</MDBCardTitle>
@@ -62,7 +60,7 @@ const PostPage = () => {
                         <textarea name="title" className='form-control' value={title} onChange={onInputChange} />
                     </MDBInputGroup>
                     <div className="form-outline" style={{ border: "1px solid black" }}>
-                        <textarea name="body" className="form-control" id="textAreaExample1" rows="4" value={body} onChange={onInputChange} />
+                        <textarea name="body" className="form-control" id="textAreaExample1" rows="5" value={body} onChange={onInputChange} />
                     </div>
                     <div style={{ marginTop: "50px" }}>
                         <MDBBtn onClick={handleEdit} className='mx-3'>{edit ? "Edit" : "Cancel"}</MDBBtn>

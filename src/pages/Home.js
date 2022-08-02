@@ -3,14 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import InputComp from '../components/InputComp'
-import { loadPostsStart } from '../redux/actions'
+import { loadPostsStart, updatePostStart } from '../redux/actions'
 
 const Home = () => {
     const dispatch = useDispatch()
     const { posts, loading } = useSelector(state => state.data)
+    
     useEffect(() => {
+      
         dispatch(loadPostsStart())
-    }, [])
+       
+    }, [dispatch])
 
     const [searchTexts, setSearchTexts] = useState('');
     const handleSearch = (e) => {

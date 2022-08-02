@@ -34,18 +34,15 @@ catch(error){
 
 
 function* onUpdatePostStartAsync({payload:{postValue}}){
-    console.log("POSTVALUE", {payload:{postValue}});
    try{
     const response = yield call(updatePostApi, postValue)
     if(response.status === 200){
         yield put(updatePostSuccess())
-        console.log("UPDATE",updatePostSuccess());
     }
         
    }
    catch(error){
 yield put(updatePostError(error.response.data))
-console.log(" ERROS", updatePostError(error.response.data));
    }
 }
 
@@ -54,10 +51,10 @@ console.log(" ERROS", updatePostError(error.response.data));
 //handler
 // whenever action is triggered it runs a saga 
 function* onLoadPosts(){
-    yield takeEvery(types.LOAD_POST_START, onLoadPostsStartAsync)
+    yield takeLatest(types.LOAD_POST_START, onLoadPostsStartAsync)
 }
 function* onUpdatePost(){
-    yield takeEvery(types.UPDATE_POST_START, onUpdatePostStartAsync)
+    yield takeLatest(types.UPDATE_POST_START, onUpdatePostStartAsync)
 }
 
 
