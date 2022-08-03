@@ -11,7 +11,8 @@ const PostPage = () => {
     const dispatch = useDispatch();
     const initialState = {
         title: post.title,
-        body: post.body
+        body: post.body,
+        id: Number(id)
     }
 
     const navigate = useNavigate()
@@ -34,7 +35,7 @@ const PostPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(updatePostStart({ postValue }))
+        dispatch(updatePostStart({ postValue, id }))
         setTimeout(() => navigate('/'), 1000)
     }
 

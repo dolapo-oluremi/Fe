@@ -34,6 +34,8 @@ catch(error){
 
 
 function* onUpdatePostStartAsync({payload:{postValue}}){
+
+    console.log("postValue", postValue);
    try{
     const response = yield call(updatePostApi, postValue)
     if(response.status === 200){

@@ -6,7 +6,7 @@ export const loadPostsApi = async () =>
 
 // define put api to update post by id
     export const updatePostApi = async (postInfo) =>
-    await axios.patch(`http://localhost:4990/posts/${postInfo.title}`, postInfo);
+    await axios.patch(`http://localhost:4990/posts/${postInfo.id}`, postInfo);
 
 
 
